@@ -1,0 +1,46 @@
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\animations\startup.txt
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\bundles\FileDialog.txt
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\bundles\splash.txt
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\fonts\arial.ttf
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\fonts\cour.ttf
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\fonts\maven_pro_regular.ttf
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\fdFile.png
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\fdFolder.png
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\FileDialog_Active.png
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\FileDialog_Background.png
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\FileDialog_Inactive.png
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\FileDialog_Scroll.png
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\FileDialog_ScrollSmall.png
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\Swinburne.jpg
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\images\SwinGameAni.png
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\panels\FileDialog.txt
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\sounds\error.wav
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\sounds\SwinGameStart.wav
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\SwinGame.icns
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\Resources\SwinGame.ico
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\MyGame.exe
+C:\Users\NhNg\Desktop\NN AFX\bin\Debug\SwinGame.dll
+C:\Users\NhNg\Desktop\NN AFX\obj\x86\Debug-Windows\MyGame.exe
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\animations\startup.txt
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\bundles\FileDialog.txt
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\bundles\splash.txt
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\fonts\arial.ttf
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\fonts\cour.ttf
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\fonts\maven_pro_regular.ttf
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\fdFile.png
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\fdFolder.png
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\FileDialog_Active.png
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\FileDialog_Background.png
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\FileDialog_Inactive.png
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\FileDialog_Scroll.png
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\FileDialog_ScrollSmall.png
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\Swinburne.jpg
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\images\SwinGameAni.png
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\panels\FileDialog.txt
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\sounds\error.wav
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\sounds\SwinGameStart.wav
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\SwinGame.icns
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\Resources\SwinGame.ico
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\MyGame.exe
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\bin\Debug\SwinGame.dll
+D:\Swinburne\Year 2 - Semester 1\SWE20001\Lab\NN AFX\obj\x86\Debug-Windows\MyGame.exe

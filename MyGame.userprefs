@@ -1,0 +1,21 @@
+﻿<Properties StartupItem="MyGame.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Windows|x86" />
+  <MonoDevelop.Ide.ItemProperties.MyGame PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\EnemyLinear.cs">
+    <Files>
+      <File FileName="src\GameMain.cs" Line="21" Column="5" />
+      <File FileName="src\Controller.cs" Line="136" Column="21" />
+      <File FileName="src\InGameBullets.cs" Line="37" Column="2" />
+      <File FileName="src\FlyingObject.cs" Line="24" Column="3" />
+      <File FileName="src\Player.cs" Line="34" Column="1" />
+      <File FileName="src\Enemy.cs" Line="52" Column="86" />
+      <File FileName="src\EnemyCircular.cs" Line="37" Column="22" />
+      <File FileName="src\Weapon.cs" Line="31" Column="3" />
+      <File FileName="src\EnemyLinear.cs" Line="20" Column="103" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
