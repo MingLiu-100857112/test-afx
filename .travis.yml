@@ -1,2 +1,7 @@
 language: csharp
 solution: MyGame.sln
+install:
+  - sudo apt-get install nunit-console
+  - nuget restore MyGame.sln
+script:
+  - xbuild ./MyGame.sln
