@@ -1,7 +1,2 @@
 language: csharp
 solution: MyGame.sln
-install:
-  - nuget restore MyGame.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
-script:
-  - xbuild /p:Configuration=Debug MyGame.sln
