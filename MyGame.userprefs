@@ -5,17 +5,23 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\EnemyLinear.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Player.cs">
     <Files>
-      <File FileName="src\GameMain.cs" Line="21" Column="5" />
-      <File FileName="src\Controller.cs" Line="136" Column="21" />
-      <File FileName="src\InGameBullets.cs" Line="37" Column="2" />
-      <File FileName="src\FlyingObject.cs" Line="24" Column="3" />
-      <File FileName="src\Player.cs" Line="34" Column="1" />
-      <File FileName="src\Enemy.cs" Line="52" Column="86" />
-      <File FileName="src\EnemyCircular.cs" Line="37" Column="22" />
-      <File FileName="src\Weapon.cs" Line="31" Column="3" />
-      <File FileName="src\EnemyLinear.cs" Line="20" Column="103" />
+      <File FileName="src\Controller.cs" Line="442" Column="4" />
+      <File FileName="src\Player.cs" Line="136" Column="4" />
+      <File FileName="src\GameMain.cs" Line="13" Column="29" />
+      <File FileName="src\Utility.cs" Line="36" Column="31" />
+      <File FileName="src\GameObject.cs" Line="11" Column="34" />
+      <File FileName="src\Enemy.cs" Line="20" Column="77" />
+      <File FileName="src\EnemyCircular.cs" Line="20" Column="29" />
+      <File FileName="src\EnemyLinear.cs" Line="12" Column="3" />
+      <File FileName="src\Explosion.cs" Line="28" Column="25" />
+      <File FileName="src\InGameBullets.cs" Line="66" Column="28" />
+      <File FileName="src\ItemFire.cs" Line="51" Column="18" />
+      <File FileName="src\Weapon.cs" Line="58" Column="20" />
+      <File FileName="src\IPatternCurve.cs" Line="6" Column="119" />
+      <File FileName="src\IPatternLinear.cs" Line="6" Column="8" />
+      <File FileName="src\FlyingObject.cs" Line="101" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
 </Properties>

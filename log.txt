@@ -1,1 +1,8 @@
-2016/10/12 03:17pm
+language: csharp
+solution: MyGame.sln
+install:
+  - sudo apt-get install nunit-console
+  - nuget restore MyGame.sln
+script:
+  - xbuild ./MyGame.sln
+  - nunit-console ./UnitTestProject1/bin/Debug/UnitTestProject1.dll

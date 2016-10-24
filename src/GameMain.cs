@@ -5,29 +5,44 @@ namespace MyGame
 {
 	public class GameMain
 	{
+		/// <summary>
+		/// The entry point of the program.
+		/// Draws Menu, Main Gameplay and EndGame layouts
+		/// Press Spacebar to go to next layout.
+		/// </summary>
 		public static void Main ()
 		{
+			bool isEnd = false;
+			Utility.DefaultScreen ();
+			Utility.InitiliseGameController ();
 
-			SwinGame.OpenGraphicsWindow ("GameMain", 600, 800);
+			while (!SwinGame.WindowCloseRequested ()) 
+			{
+				while (!SwinGame.KeyTyped (KeyCode.vk_SPACE) && (false == SwinGame.WindowCloseRequested ())) 
+				{
+					Utility.MenuScreen ();
+				}
 
-			Controller gameController = new Controller ();
-			gameController.EquipObjects ();
-		
+				Utility.CreateObjects ();
 
-			while (false == SwinGame.WindowCloseRequested ()) {
+				while (!isEnd && (false == SwinGame.WindowCloseRequested ())) 
+				{
+					Utility.DrawGame ();
+					Utility.CheckCollision ();
+					Utility.CheckGameStatus ();
+					Utility.GameControl ();
+					isEnd = Utility.CheckGameStatus ();
+					SwinGame.RefreshScreen (60);
+				}
 
-				SwinGame.ProcessEvents ();
+				while (!SwinGame.KeyTyped (KeyCode.vk_SPACE) && (false == SwinGame.WindowCloseRequested ()))
+				{
+					Utility.EndScreen ();
+				}
+				Utility.ClearGame ();
+				isEnd = false;
 				SwinGame.ClearScreen (Color.White);
-
-				gameController.DrawObjects ();
-				gameController.FireObjects ();
-				gameController.MoveObjects ();
-				gameController.CheckAlive ();
-				gameController.CheckCollision ();
-				gameController.CheckEndGame ();
-
 				SwinGame.RefreshScreen (60);
-
 			}
 		}
 	}

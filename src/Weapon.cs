@@ -3,41 +3,71 @@ using System.Collections.Generic;
 using SwinGameSDK;
 namespace MyGame
 {
+	/// <summary>
+	/// Weapon.
+	/// Inherites GameObject.
+	/// Model for all bullets.
+	/// </summary>
 	public class Weapon:GameObject
 	{
-
-
 		private int _bulletPower;
+		private BitmapKind _bulletKind;
+		private int _belongTo;
+		private double _speed;
 
-		public Weapon (double aXLocation, double aYLocation, double aSpeed, int aBulletPower)
-			:base(aXLocation, aYLocation, aSpeed)
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:MyGame.Weapon"/> class.
+		/// </summary>
+		/// <param name="aXLocation">Bullet's X Location.</param>
+		/// <param name="aYLocation">Bullet's Y Location.</param>
+		/// <param name="aSpeed">Bullet's speed.</param>
+		/// <param name="aBulletPower">Bullet's bullet power.</param>
+		/// <param name="aBitmapKind">Bullet's bitmap kind.</param>
+		/// <param name="aBelongTo">Bullet's belong to.</param>
+		public Weapon (double aXLocation, double aYLocation, double aSpeed, int aBulletPower, BitmapKind aBitmapKind, int aBelongTo)
+			:base(aXLocation, aYLocation)
 		{
 			_bulletPower = aBulletPower;
+			_bulletKind = aBitmapKind;
+			_belongTo = aBelongTo;
+			_speed = aSpeed;
 		}
 
-
-		//draw bullet, radius =10
-		public override void Draw (Color aColor)
+		/// <summary>
+		/// Draw the bullet.
+		/// </summary>
+		public override void Draw ()
 		{
-			SwinGame.DrawCircle (aColor, (float)XLocation, (float)YLocation, 10);
+			SwinGame.DrawBitmap (Controller.GetBitMap (_bulletKind), (float)XLocation, (float)YLocation);
 		}
 
-		//bullet speed: negative (goes upward) is for player, positive is for enemies
-		public override void Move ()
+		/// <summary>
+		/// Update bullet position.
+		/// </summary>
+		public void Move ()
 		{
-				YLocation += Speed;
+				XLocation -= _speed;
 		}
 
-		
 		public int BulletPower {
 			get {
 				return _bulletPower;
 			}
+		}
 
-			set {
-				_bulletPower = value;
+		public BitmapKind BulletKind {
+			get {
+				return _bulletKind;
 			}
 		}
+
+		public int BelongTo {
+			get {
+				return _belongTo;
+			}
+		}
+
+
 	}
 }
 

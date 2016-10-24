@@ -4,75 +4,140 @@ using SwinGameSDK;
 
 namespace MyGame
 {
+	/// <summary>
+	/// Player.
+	/// Inherites Flying Object.
+	/// Model for both players.
+	/// </summary>
 	public class Player : FlyingObject
 	{
-		
-	
-	
-		public Player (double aXLocation, double aYLocation, double aSpeed, int aHp)
+		private int _controlDirection;
+		private int _score;
+		private int _playerNum;
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:MyGame.Player"/> class.
+		/// </summary>
+		/// <param name="aXLocation">Player's X Location.</param>
+		/// <param name="aYLocation">Player's Y Location.</param>
+		/// <param name="aSpeed">Player's speed.</param>
+		/// <param name="aHp">Player's hp.</param>
+		/// <param name="aPlayerNum">Player number '0' or '1'.</param>
+		public Player (double aXLocation, double aYLocation, double aSpeed, int aHp, int aPlayerNum)
 			: base (aXLocation, aYLocation, aSpeed, aHp)
 		{
-			
-
+			_score = 0;
+			_controlDirection = 0;
+			_playerNum = aPlayerNum;
 		}
-
-
-
-		//keyboard control
+		/// <summary>
+		/// Update players position.
+		/// </summary>
 		public override void Move ()
 		{
-			if (SwinGame.KeyDown (KeyCode.vk_a))
+			if (_controlDirection == 1) //left
 				XLocation -= Speed;
-			if (SwinGame.KeyDown (KeyCode.vk_d))
+			if (_controlDirection == 2) //right
 				XLocation += Speed;
-			if ((SwinGame.KeyDown (KeyCode.vk_w)&&(YLocation>=SwinGame.ScreenHeight ()-200))) 
+			if (_controlDirection == 3) //up
 				YLocation -= Speed;
-			if ((SwinGame.KeyDown (KeyCode.vk_s) && (YLocation <= SwinGame.ScreenHeight () - 25)))
+			if (_controlDirection == 4) // down
 				YLocation += Speed;
 
+			_controlDirection = 0;
 		}
-
-		//three types of fire: single bullet, double, and penta
-		//can add more (extension)
-		public override void Fire ()
+		/// <summary>
+		/// Fire the bullets.
+		/// Players have 4 types of weapon depends on equiped _bulletType.
+		/// '0' - single. '1' - double. '2' - triple. '3' - quintuple
+		/// Each player has different bullet color depends on belongTo
+		/// '0' - Blue. '1' - Red. 
+		/// </summary>
+		/// <param name="belongTo">Player number, '0' or '1'.</param>
+		public override void Fire (int belongTo)
 		{
-			switch (BulletType) {
+			BitmapKind bmk=BitmapKind.BulletA;
+			if (belongTo == 1)
+				bmk = BitmapKind.BulletB;
+			
+			switch (_bulletType) 
+			{
+			case 0:
+				if (_timerCount++ == FireRate) 
+				{
+					_timerCount = 0;
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+PLAYER_BITMAP_CENTRE_X*2, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed,_firePower, bmk, belongTo));
+				}
+				break;
+
 			case 1:
-				if (TimerCount++ == FireRate) {
-					TimerCount = 0;
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation, YLocation, BulletSpeed,FirePower));
+				if (_timerCount++ == FireRate) 
+				{
+					_timerCount = 0;
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2, YLocation + PLAYER_BITMAP_CENTRE_Y +15, _bulletSpeed, _firePower,bmk, belongTo));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2, YLocation + PLAYER_BITMAP_CENTRE_Y -15, _bulletSpeed, _firePower,bmk, belongTo));
 				}
 				break;
 
 			case 2:
-				if (TimerCount++ == FireRate) {
-					TimerCount = 0;
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + 15, YLocation, BulletSpeed, FirePower));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation - 15, YLocation, BulletSpeed, FirePower));
+				if (_timerCount++ == FireRate) 
+				{
+					_timerCount = 0;
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2 +20, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed, _firePower,bmk, belongTo));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2 , YLocation + PLAYER_BITMAP_CENTRE_Y +25, _bulletSpeed, _firePower,bmk, belongTo));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation+ PLAYER_BITMAP_CENTRE_X* 2 , YLocation + PLAYER_BITMAP_CENTRE_Y -25, _bulletSpeed, _firePower,bmk, belongTo));
 				}
 				break;
-
 			case 3:
-				if (TimerCount++ == FireRate) {
-					TimerCount = 0;
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation, YLocation - 10, BulletSpeed, FirePower));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + 15, YLocation - 5, BulletSpeed, FirePower));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation - 15, YLocation - 5, BulletSpeed, FirePower));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + 25, YLocation, BulletSpeed, FirePower));
-					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation - 25, YLocation, BulletSpeed, FirePower));
+				if (_timerCount++ == FireRate) 
+				{
+					_timerCount = 0;
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2 + 20, YLocation + PLAYER_BITMAP_CENTRE_Y, _bulletSpeed, _firePower, bmk, belongTo));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2+10, YLocation + PLAYER_BITMAP_CENTRE_Y + 25, _bulletSpeed, _firePower, bmk, belongTo));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2+10, YLocation + PLAYER_BITMAP_CENTRE_Y - 25, _bulletSpeed, _firePower, bmk, belongTo));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y + 55, _bulletSpeed, _firePower, bmk, belongTo));
+					InGameBullets.GamePlayerWeapon.Add (new Weapon (XLocation + PLAYER_BITMAP_CENTRE_X * 2, YLocation + PLAYER_BITMAP_CENTRE_Y - 55, _bulletSpeed, _firePower, bmk, belongTo));
 				}
 				break;
 			}
 		}
 
-
-		//draw the player
-		//size is hardcoded (radius = 20)
-		public override void Draw (Color aColor)
+		/// <summary>
+		/// Draw both players.
+		/// Depends on _playerNum.
+		/// '0' - Blue Ship. '1' - Red Ship.
+		/// </summary>
+		public override void Draw ()
 		{
-			SwinGame.DrawCircle (aColor,(float)XLocation,(float)YLocation,20 );
+			if (_playerNum==0)
+				SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.Player0), (float)XLocation, (float)YLocation);
+			else
+				SwinGame.DrawBitmap (Controller.GetBitMap (BitmapKind.Player1), (float)XLocation, (float)YLocation);
 		}
 
+		public int ControlDirection 
+		{
+			get {
+				return _controlDirection;
+			}
+
+			set {
+				_controlDirection = value;
+			}
+		}
+
+		public int Score 
+		{
+			get {
+				//if (_score <= 0)
+					//_score = 0;
+				return _score;
+			}
+
+			set {
+				_score = value;
+			}
+		}
 	}
 }
 

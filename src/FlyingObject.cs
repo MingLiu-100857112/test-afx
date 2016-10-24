@@ -2,97 +2,108 @@
 using SwinGameSDK;
 namespace MyGame
 {
-	//this class has common properties for both Player and Enemy classes
+	/// <summary>
+	/// Flying object.
+	/// Inherites GameObject
+	/// Abstract Base Class for Player and Enemy
+	/// </summary>
 	public abstract class FlyingObject:GameObject
 	{
-		private int _hp;
-		private int _timerCount;
-		private int _fireRate;
-		private double _bulletSpeed;
-		private int _bulletType;
-		private int _firePower;
+		protected const float PLAYER_BITMAP_CENTRE_Y = 30;
+		protected const float PLAYER_BITMAP_CENTRE_X = 30;
+		protected const float ENEMY_BITMAP_CENTRE_X = 35;
+		protected const float ENEMY_BITMAP_CENTRE_Y = 35;
 
+		protected int _hp;
+		protected int _timerCount;
+		protected int _fireRate;
+		protected double _bulletSpeed;
+		protected int _bulletType;
+		protected int _firePower;
+		protected double _speed;
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:MyGame.FlyingObject"/> class.
+		/// </summary>
+		/// <param name="aXLocation">Ship's X location.</param>
+		/// <param name="aYLocation">Ship's Y location.</param>
+		/// <param name="aSpeed">Ship's Speed.</param>
+		/// <param name="aHp">Ship's HP.</param>
 		public FlyingObject (double aXLocation, double aYLocation, double aSpeed, int aHp)
-			: base (aXLocation, aYLocation, aSpeed)
+			: base (aXLocation, aYLocation)
 		{
 			_hp = aHp;
 			_timerCount = 0;
+			_speed = aSpeed;
 		}
 
-		//Determine what weapon it has based on given parameters
-		//bullet speed: negative (goes upward) is for player, positive is for enemies
+		/// <summary>
+		/// Equip ship's weapons.
+		/// </summary>
+		/// <param name="aBulletType">Ship's bullet type.</param>
+		/// <param name="aFireRate">Ship's fire rate.</param>
+		/// <param name="aBulletSpeed">Ship's bullet speed.</param>
+		/// <param name="aFirePower">Ship's fire power.</param>
 		public void Equip (int aBulletType, int aFireRate, double aBulletSpeed, int aFirePower)
 		{
-			FireRate = aFireRate;
-			BulletSpeed = aBulletSpeed;
-			BulletType = aBulletType;
-			FirePower = aFirePower;
+			_fireRate = aFireRate;
+			_bulletSpeed = aBulletSpeed;
+			_bulletType = aBulletType;
+			_firePower = aFirePower;
 		}
 
-		//Both player and enemy need to fire their bullets
-		public abstract void Fire ();
+		/// <summary>
+		/// Fire Bullets.
+		/// Abstract method.
+		/// </summary>
+		/// <param name="belongTo">Player '0' or '1' or '2'.</param>
+		public abstract void Fire (int belongTo);
 
+		/// <summary>
+		/// Move this ship.
+		/// Abstract method.
+		/// </summary>
+		public abstract void Move ();
 
-		//basic properties
-		public int TimerCount {
-			get {
-				return _timerCount;
-			}
-
-			set {
-				_timerCount = value;
-			}
-		}
-
-		public int FireRate {
+		public int FireRate 
+		{
 			get {
 				return _fireRate;
 			}
-
-			set {
-				_fireRate = value;
-			}
 		}
 
-		public int Hp {
+		public int Hp 
+		{
 			get {
+				if (_hp <= 0)
+					_hp = 0;
 				return _hp;
 			}
-
 			set {
 				_hp = value;
 			}
 		}
 
-		public double BulletSpeed {
+		public double BulletSpeed 
+		{
 			get {
 				return _bulletSpeed;
 			}
-
-			set {
-				_bulletSpeed = value;
-			}
 		}
 
-		public int BulletType {
-			get {
-				return _bulletType;
-			}
-
-			set {
-				_bulletType = value;
-			}
-		}
-
-		public int FirePower {
+		public int FirePower
+		{
 			get {
 				return _firePower;
 			}
+		}
 
-			set {
-				_firePower = value;
+		public double Speed 
+		{
+			get {
+				return _speed;
 			}
+
 		}
 	}
 }

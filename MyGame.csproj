@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug-Windows</Configuration>
@@ -56,10 +56,7 @@
     </CustomCommands>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="src\" />
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="src\GameMain.cs" />
     <Compile Include="src\Controller.cs" />
@@ -71,8 +68,19 @@
     <Compile Include="src\Weapon.cs" />
     <Compile Include="src\InGameBullets.cs" />
     <Compile Include="src\FlyingObject.cs" />
+    <Compile Include="src\BitmapKind.cs" />
+    <Compile Include="src\Explosion.cs" />
+    <Compile Include="src\GameState.cs" />
+    <Compile Include="src\ItemFire.cs" />
+    <Compile Include="src\Utility.cs" />
+    <Compile Include="src\IPatternCurve.cs" />
+    <Compile Include="src\IPatternLinear.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.3.5.0\lib\net40\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SwinGame">
       <HintPath>lib\SwinGame.dll</HintPath>
     </Reference>
@@ -80,6 +88,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\animations\startup.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -161,6 +170,19 @@
     <WinLibraryFiles Include="lib\win\smpeg.dll" />
     <WinLibraryFiles Include="lib\win\swingame.rc" />
     <WinLibraryFiles Include="lib\win\zlib1.dll" />
+    <WinLibraryFiles Include="Resources\images\bullet1.png" />
+    <WinLibraryFiles Include="Resources\images\bullet2.png" />
+    <WinLibraryFiles Include="Resources\images\bullet3.png" />
+    <WinLibraryFiles Include="Resources\images\player.png" />
+    <WinLibraryFiles Include="Resources\images\enemycir.png" />
+    <WinLibraryFiles Include="Resources\images\enemylin.png" />
+    <WinLibraryFiles Include="Resources\images\explosion.png" />
+    <WinLibraryFiles Include="Resources\images\background.png" />
+    <WinLibraryFiles Include="Resources\sounds\bang.wav" />
+    <WinLibraryFiles Include="Resources\images\item1.png" />
+    <WinLibraryFiles Include="Resources\images\item2.png" />
+    <WinLibraryFiles Include="Resources\images\item3.png" />
+    <WinLibraryFiles Include="Resources\images\player1.png" />
   </ItemGroup>
   <Target Name="CopyFiles">
     <Copy SourceFiles="@(MacLibraryFiles)" DestinationFolder="$(OutDir)" />
